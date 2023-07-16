@@ -38,6 +38,16 @@ let emailPass = false;
 let pwPass = false;
 
 
+email.addEventListener('input', function () {
+  if (emailReg(this.value)) {
+    this.classList.remove('is--invalid')
+    emailPass = true;
+  } else {
+    this.classList.add('is--invalid')
+    emailPass = false;
+  };
+})
+
 pw.addEventListener('input', function () {
   if (pwReg(this.value)) {
     this.classList.remove('is--invalid')
