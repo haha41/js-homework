@@ -45,21 +45,20 @@ function handleClick(e) {
   li.classList.toggle('is-active');  
 
 // 배경색 변경
-let dataArray = [...data];
 let dataIndex = `${li.dataset.index - 1}`
-let dataColor = dataArray[dataIndex].color // ['#98d00f', '#002906']
+let dataColor = data[dataIndex].color // ['#98d00f', '#002906']
 
 body.style.background = `linear-gradient(to bottom, ${dataColor[0]}, ${dataColor[1]})`;
 
 // 이미지 변경
-let dataImg =  `./assets/${dataArray[dataIndex].name.toLowerCase()}.jpeg`;
-let dataAlt = dataArray[dataIndex].alt
+let dataImg =  `./assets/${data[dataIndex].name.toLowerCase()}.jpeg`;
+let dataAlt = data[dataIndex].alt
 
 visual.src = dataImg;
 visual.alt = dataAlt;
 
 // 상단 이름 변경
-let dataName = dataArray[dataIndex].name;
+let dataName = data[dataIndex].name;
 
 nickName.textContent = dataName;
 }
